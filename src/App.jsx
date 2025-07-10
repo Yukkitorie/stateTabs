@@ -59,11 +59,7 @@ export default function App() {
   const currentTabCards = tabData[activeTab];
 
   function toggleIsOpen() {
-    setIsOpen((prev) => {
-      const nextIsOpen = !prev;
-      if (nextIsOpen) setActiveTab(0);
-      return nextIsOpen;
-    });
+    setIsOpen((prev) => !prev);
   }
 
   function goToPrevTab() {
@@ -79,7 +75,9 @@ export default function App() {
       {!isOpen ? (
         <button onClick={toggleIsOpen}>Start</button>
       ) : (
-        <span onClick={toggleIsOpen} className="close"></span>
+        <span onClick={toggleIsOpen} className="close">
+          &times;
+        </span>
       )}
       {isOpen && (
         <div className="app">
