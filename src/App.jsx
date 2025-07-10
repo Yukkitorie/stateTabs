@@ -1,9 +1,6 @@
 import { useState } from "react";
 import "./index.css";
 
-//Rus
-// 2 - Реализуйте функционал отображения карточек в зависимости от активного таба. Переключать табы можно как нажатием на кнопки "Prev" и "Next", так и нажатием на сам таб.
-
 const cardData = [
   {
     title: "Mocha",
@@ -142,8 +139,6 @@ function Card({ cardObj }) {
         <h2 className="card-title">{cardObj.title}</h2>
         <p className="card-description">{cardObj.description}</p>
         <p className="card-date">{cardObj.date}</p>
-
-        {/* Tags section */}
         <div className="card-tags">
           <CardTag tag={cardObj.tags[0]} />
           {cardObj.tags[1] && <CardTag tag={cardObj.tags[1]} />}
